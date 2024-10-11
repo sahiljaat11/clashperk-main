@@ -1,0 +1,13 @@
+node_modules/
+dist/
+yarn.lock
+.env
+auth.ts
+bot.ts
+auth.js
+.vs/
+.idea/
+test/
+.DS_Store
+http_ca.crt
+.sentryclirc

@@ -1,0 +1,16 @@
+name: deploy-custom-bot
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    environment: production
+    name: deploy-custom-bot
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy
+        run: |
+          curl --fail --location --request POST 'http://${{ secrets.CUSTOM_BOT_SERVICE_TOKEN }}/github-webhook' \
+            --header 'x-api-key: ${{ secrets.CUSTOM_BOT_SERVICE_TOKEN }}'
